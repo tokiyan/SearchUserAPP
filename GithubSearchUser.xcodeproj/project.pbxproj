@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7F10B223244B399200D72141 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10B221244B399200D72141 /* UserTableViewCell.swift */; };
 		7F10B224244B399200D72141 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F10B222244B399200D72141 /* UserTableViewCell.xib */; };
+		7F10B229244B563300D72141 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10B228244B563300D72141 /* User.swift */; };
 		7FE95ED0244AEC74000D150E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95ECF244AEC74000D150E /* AppDelegate.swift */; };
 		7FE95ED9244AEC78000D150E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE95ED8244AEC78000D150E /* Assets.xcassets */; };
 		7FE95EDC244AEC78000D150E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE95EDA244AEC78000D150E /* LaunchScreen.storyboard */; };
@@ -24,6 +25,7 @@
 		3EC1A5106341DC6EAC75D5F1 /* Pods-GithubSearchUser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubSearchUser.debug.xcconfig"; path = "Target Support Files/Pods-GithubSearchUser/Pods-GithubSearchUser.debug.xcconfig"; sourceTree = "<group>"; };
 		7F10B221244B399200D72141 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		7F10B222244B399200D72141 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		7F10B228244B563300D72141 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7FE95ECC244AEC74000D150E /* GithubSearchUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubSearchUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE95ECF244AEC74000D150E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FE95ED8244AEC78000D150E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +78,22 @@
 			path = UserCell;
 			sourceTree = "<group>";
 		};
+		7F10B226244B560D00D72141 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7F10B227244B562000D72141 /* Entity */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7F10B227244B562000D72141 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7F10B228244B563300D72141 /* User.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		7FE95EC3244AEC74000D150E = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +116,7 @@
 		7FE95ECE244AEC74000D150E /* GithubSearchUser */ = {
 			isa = PBXGroup;
 			children = (
+				7F10B226244B560D00D72141 /* API */,
 				7FE95EE3244AF1C2000D150E /* SearchUser */,
 				7FE95ECF244AEC74000D150E /* AppDelegate.swift */,
 				7FE95ED8244AEC78000D150E /* Assets.xcassets */,
@@ -304,6 +323,7 @@
 				7FE95EE7244AF1FB000D150E /* SearchUserViewController.swift in Sources */,
 				7F10B223244B399200D72141 /* UserTableViewCell.swift in Sources */,
 				7FE95EF1244AF69E000D150E /* R.generated.swift in Sources */,
+				7F10B229244B563300D72141 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
