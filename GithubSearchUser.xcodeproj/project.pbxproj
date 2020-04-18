@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7FE95ED0244AEC74000D150E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95ECF244AEC74000D150E /* AppDelegate.swift */; };
-		7FE95ED2244AEC74000D150E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95ED1244AEC74000D150E /* SceneDelegate.swift */; };
 		7FE95ED9244AEC78000D150E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE95ED8244AEC78000D150E /* Assets.xcassets */; };
 		7FE95EDC244AEC78000D150E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE95EDA244AEC78000D150E /* LaunchScreen.storyboard */; };
 		7FE95EE5244AF1E7000D150E /* SearchUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE95EE4244AF1E7000D150E /* SearchUser.storyboard */; };
@@ -23,7 +22,6 @@
 		3EC1A5106341DC6EAC75D5F1 /* Pods-GithubSearchUser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubSearchUser.debug.xcconfig"; path = "Target Support Files/Pods-GithubSearchUser/Pods-GithubSearchUser.debug.xcconfig"; sourceTree = "<group>"; };
 		7FE95ECC244AEC74000D150E /* GithubSearchUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubSearchUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE95ECF244AEC74000D150E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7FE95ED1244AEC74000D150E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7FE95ED8244AEC78000D150E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FE95EDB244AEC78000D150E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FE95EDD244AEC78000D150E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 			children = (
 				7FE95EE3244AF1C2000D150E /* SearchUser */,
 				7FE95ECF244AEC74000D150E /* AppDelegate.swift */,
-				7FE95ED1244AEC74000D150E /* SceneDelegate.swift */,
 				7FE95ED8244AEC78000D150E /* Assets.xcassets */,
 				7FE95EDA244AEC78000D150E /* LaunchScreen.storyboard */,
 				7FE95EDD244AEC78000D150E /* Info.plist */,
@@ -271,7 +268,6 @@
 				7FE95ED0244AEC74000D150E /* AppDelegate.swift in Sources */,
 				7FE95EEA244AF226000D150E /* SearchUserPresenter.swift in Sources */,
 				7FE95EE7244AF1FB000D150E /* SearchUserViewController.swift in Sources */,
-				7FE95ED2244AEC74000D150E /* SceneDelegate.swift in Sources */,
 				7FE95EF1244AF69E000D150E /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

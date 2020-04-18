@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search User View Controller-->
         <scene sceneID="sXx-IT-gkU">
             <objects>
-                <viewController id="OiW-9Q-Orp" sceneMemberID="viewController">
+                <viewController id="OiW-9Q-Orp" customClass="SearchUserViewController" customModule="GithubSearchUser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3fw-6c-OMt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
