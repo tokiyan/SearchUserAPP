@@ -13,7 +13,6 @@ opt_in_rules:
 - conditional_returns_on_newline
 - empty_count
 - explicit_init
-- explicit_type_interface # new
 - fatal_error_message   # new
 # ファイルヘッダを修正してもエラー解除されないため
 #- file_header

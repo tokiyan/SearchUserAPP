@@ -20,9 +20,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fIR-GY-f48">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fIR-GY-f48">
                                 <rect key="frame" x="0.0" y="56" width="375" height="611"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OiW-9Q-Orp" id="vET-Zw-YbF"/>
+                                    <outlet property="delegate" destination="OiW-9Q-Orp" id="9P3-lN-mkC"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -39,7 +43,7 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="Sa4-OZ-GQf" id="mRz-4a-9wI"/>
-                        <outlet property="tableView" destination="fIR-GY-f48" id="5e6-P2-Q7u"/>
+                        <outlet property="tableView" destination="fIR-GY-f48" id="STI-pQ-fhF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQA-rl-XGK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
