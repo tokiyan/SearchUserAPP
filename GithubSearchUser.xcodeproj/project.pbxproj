@@ -15,6 +15,7 @@
 		7FE95EE7244AF1FB000D150E /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EE6244AF1FB000D150E /* SearchUserViewController.swift */; };
 		7FE95EEA244AF226000D150E /* SearchUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EE9244AF226000D150E /* SearchUserPresenter.swift */; };
 		7FE95EEE244AF248000D150E /* SearchUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EED244AF248000D150E /* SearchUserModel.swift */; };
+		7FE95EF1244AF69E000D150E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EF0244AF69E000D150E /* R.generated.swift */; };
 		C0AE0392592EDB419BB75BDD /* Pods_GithubSearchUser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC9AA5D0F1DDF6936669359 /* Pods_GithubSearchUser.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		7FE95EE6244AF1FB000D150E /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
 		7FE95EE9244AF226000D150E /* SearchUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserPresenter.swift; sourceTree = "<group>"; };
 		7FE95EED244AF248000D150E /* SearchUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserModel.swift; sourceTree = "<group>"; };
+		7FE95EF0244AF69E000D150E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		B43AD78C0748550C1D01F66D /* Pods-GithubSearchUser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubSearchUser.release.xcconfig"; path = "Target Support Files/Pods-GithubSearchUser/Pods-GithubSearchUser.release.xcconfig"; sourceTree = "<group>"; };
 		EAC9AA5D0F1DDF6936669359 /* Pods_GithubSearchUser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubSearchUser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 		7FE95EC3244AEC74000D150E = {
 			isa = PBXGroup;
 			children = (
+				7FE95EF0244AF69E000D150E /* R.generated.swift */,
 				7FE95ECE244AEC74000D150E /* GithubSearchUser */,
 				7FE95ECD244AEC74000D150E /* Products */,
 				14413F0631DC8C535C697234 /* Pods */,
@@ -137,6 +140,7 @@
 			buildConfigurationList = 7FE95EE0244AEC78000D150E /* Build configuration list for PBXNativeTarget "GithubSearchUser" */;
 			buildPhases = (
 				B5746B56B31F9A9B74BE7F9F /* [CP] Check Pods Manifest.lock */,
+				7FE95EEF244AF5BE000D150E /* ShellScript */,
 				7FE95EC8244AEC74000D150E /* Sources */,
 				7FE95EC9244AEC74000D150E /* Frameworks */,
 				7FE95ECA244AEC74000D150E /* Resources */,
@@ -198,6 +202,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7FE95EEF244AF5BE000D150E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		8B1AA92BF3C21763948D8230 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,6 +272,7 @@
 				7FE95EEA244AF226000D150E /* SearchUserPresenter.swift in Sources */,
 				7FE95EE7244AF1FB000D150E /* SearchUserViewController.swift in Sources */,
 				7FE95ED2244AEC74000D150E /* SceneDelegate.swift in Sources */,
+				7FE95EF1244AF69E000D150E /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

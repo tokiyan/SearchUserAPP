@@ -8,4 +8,6 @@ target 'GithubSearchUser' do
   # Pods for GithubSearchUser
   pod 'Alamofire', '~> 5.1'
 
+  pod 'R.swift'
+
 end
