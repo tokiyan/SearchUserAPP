@@ -11,6 +11,10 @@
 		7FE95ED2244AEC74000D150E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95ED1244AEC74000D150E /* SceneDelegate.swift */; };
 		7FE95ED9244AEC78000D150E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE95ED8244AEC78000D150E /* Assets.xcassets */; };
 		7FE95EDC244AEC78000D150E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE95EDA244AEC78000D150E /* LaunchScreen.storyboard */; };
+		7FE95EE5244AF1E7000D150E /* SearchUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE95EE4244AF1E7000D150E /* SearchUser.storyboard */; };
+		7FE95EE7244AF1FB000D150E /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EE6244AF1FB000D150E /* SearchUserViewController.swift */; };
+		7FE95EEA244AF226000D150E /* SearchUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EE9244AF226000D150E /* SearchUserPresenter.swift */; };
+		7FE95EEE244AF248000D150E /* SearchUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EED244AF248000D150E /* SearchUserModel.swift */; };
 		C0AE0392592EDB419BB75BDD /* Pods_GithubSearchUser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC9AA5D0F1DDF6936669359 /* Pods_GithubSearchUser.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +26,10 @@
 		7FE95ED8244AEC78000D150E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FE95EDB244AEC78000D150E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FE95EDD244AEC78000D150E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FE95EE4244AF1E7000D150E /* SearchUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchUser.storyboard; sourceTree = "<group>"; };
+		7FE95EE6244AF1FB000D150E /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
+		7FE95EE9244AF226000D150E /* SearchUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserPresenter.swift; sourceTree = "<group>"; };
+		7FE95EED244AF248000D150E /* SearchUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserModel.swift; sourceTree = "<group>"; };
 		B43AD78C0748550C1D01F66D /* Pods-GithubSearchUser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubSearchUser.release.xcconfig"; path = "Target Support Files/Pods-GithubSearchUser/Pods-GithubSearchUser.release.xcconfig"; sourceTree = "<group>"; };
 		EAC9AA5D0F1DDF6936669359 /* Pods_GithubSearchUser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubSearchUser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,6 +84,7 @@
 		7FE95ECE244AEC74000D150E /* GithubSearchUser */ = {
 			isa = PBXGroup;
 			children = (
+				7FE95EE3244AF1C2000D150E /* SearchUser */,
 				7FE95ECF244AEC74000D150E /* AppDelegate.swift */,
 				7FE95ED1244AEC74000D150E /* SceneDelegate.swift */,
 				7FE95ED8244AEC78000D150E /* Assets.xcassets */,
@@ -83,6 +92,41 @@
 				7FE95EDD244AEC78000D150E /* Info.plist */,
 			);
 			path = GithubSearchUser;
+			sourceTree = "<group>";
+		};
+		7FE95EE3244AF1C2000D150E /* SearchUser */ = {
+			isa = PBXGroup;
+			children = (
+				7FE95EEC244AF239000D150E /* Model */,
+				7FE95EE8244AF202000D150E /* View */,
+				7FE95EEB244AF230000D150E /* Presenter */,
+			);
+			path = SearchUser;
+			sourceTree = "<group>";
+		};
+		7FE95EE8244AF202000D150E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FE95EE4244AF1E7000D150E /* SearchUser.storyboard */,
+				7FE95EE6244AF1FB000D150E /* SearchUserViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7FE95EEB244AF230000D150E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7FE95EE9244AF226000D150E /* SearchUserPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7FE95EEC244AF239000D150E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FE95EED244AF248000D150E /* SearchUserModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FE95EDC244AEC78000D150E /* LaunchScreen.storyboard in Resources */,
+				7FE95EE5244AF1E7000D150E /* SearchUser.storyboard in Resources */,
 				7FE95ED9244AEC78000D150E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,7 +244,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FE95EEE244AF248000D150E /* SearchUserModel.swift in Sources */,
 				7FE95ED0244AEC74000D150E /* AppDelegate.swift in Sources */,
+				7FE95EEA244AF226000D150E /* SearchUserPresenter.swift in Sources */,
+				7FE95EE7244AF1FB000D150E /* SearchUserViewController.swift in Sources */,
 				7FE95ED2244AEC74000D150E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
