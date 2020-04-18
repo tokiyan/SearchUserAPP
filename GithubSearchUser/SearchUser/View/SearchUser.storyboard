@@ -15,13 +15,36 @@
                     <view key="view" contentMode="scaleToFill" id="3fw-6c-OMt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Sa4-OZ-GQf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fIR-GY-f48">
+                                <rect key="frame" x="0.0" y="56" width="375" height="611"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fIR-GY-f48" firstAttribute="trailing" secondItem="dg9-cc-Ofo" secondAttribute="trailing" id="13u-1I-cYR"/>
+                            <constraint firstItem="Sa4-OZ-GQf" firstAttribute="trailing" secondItem="dg9-cc-Ofo" secondAttribute="trailing" id="Q6L-4p-g5s"/>
+                            <constraint firstItem="fIR-GY-f48" firstAttribute="top" secondItem="Sa4-OZ-GQf" secondAttribute="bottom" id="Vra-F6-sOU"/>
+                            <constraint firstItem="Sa4-OZ-GQf" firstAttribute="top" secondItem="dg9-cc-Ofo" secondAttribute="top" id="gcw-dk-4TI"/>
+                            <constraint firstItem="fIR-GY-f48" firstAttribute="bottom" secondItem="dg9-cc-Ofo" secondAttribute="bottom" id="mh4-mW-2Rl"/>
+                            <constraint firstItem="fIR-GY-f48" firstAttribute="leading" secondItem="dg9-cc-Ofo" secondAttribute="leading" id="qpw-SI-421"/>
+                            <constraint firstItem="Sa4-OZ-GQf" firstAttribute="leading" secondItem="dg9-cc-Ofo" secondAttribute="leading" id="x6I-lS-peN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dg9-cc-Ofo"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="Sa4-OZ-GQf" id="mRz-4a-9wI"/>
+                        <outlet property="tableView" destination="fIR-GY-f48" id="5e6-P2-Q7u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQA-rl-XGK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="87" y="170"/>
+            <point key="canvasLocation" x="85.599999999999994" y="169.56521739130437"/>
         </scene>
     </scenes>
 </document>
