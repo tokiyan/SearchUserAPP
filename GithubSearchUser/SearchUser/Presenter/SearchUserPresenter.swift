@@ -17,6 +17,7 @@ protocol SearchUserPresenterInput {
 
 protocol SearchUserPresenterOutput: AnyObject {
     func reloadData()
+    func pushDetal(_ user: User)
 }
 
 final class SearchUserPresenter: SearchUserPresenterInput {
@@ -35,7 +36,7 @@ final class SearchUserPresenter: SearchUserPresenterInput {
     }
 
     func didSelectRowAt(_ at: IndexPath) {
-        return
+        view.pushDetal(getUser(at))
     }
 
     func searchButtonClicked(_ text: String?) {

@@ -46,6 +46,12 @@ extension SearchUserViewController: SearchUserPresenterOutput {
     func reloadData() {
         tableView.reloadData()
     }
+
+    func pushDetal(_ user: User) {
+        let webdetailViewController = R.storyboard.webDetail.instantiateInitialViewController()!
+        webdetailViewController.setData(user)
+        self.navigationController?.pushViewController(webdetailViewController, animated: true)
+    }
 }
 
 extension SearchUserViewController: UITableViewDelegate {
