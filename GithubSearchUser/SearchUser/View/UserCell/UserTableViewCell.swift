@@ -10,15 +10,17 @@ import UIKit
 
 final class UserTableViewCell: UITableViewCell {
 
+    @IBOutlet private weak var userImage: UIImageView!
+    @IBOutlet private weak var typeLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setData(_ data: User) {
+        nameLabel.text = data.login
+        typeLabel.text = data.type
     }
-
 }

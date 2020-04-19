@@ -17,8 +17,6 @@ opt_in_rules:
 #- file_header
 - first_where
 # 場合によっては特に問題ないので
-#- force_unwrapping
-- implicitly_unwrapped_optional # new
 - nimble_operator
 - number_separator
 - object_literal

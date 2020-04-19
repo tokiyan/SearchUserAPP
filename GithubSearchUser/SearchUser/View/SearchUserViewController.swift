@@ -10,37 +10,51 @@ import UIKit
 
 final class SearchUserViewController: UIViewController {
 
-    @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var tableView: UITableView! {
+        willSet {
+            newValue.register(R.nib.userTableViewCell)
+        }
+    }
+
+    private var presenter: SearchUserPresenterInput!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setup()
-    }
+        let model = SearchUserModel()
+        presenter = SearchUserPresenter(view: self, model: model)
 
-    func setup() {
-        tableView.register(R.nib.userTableViewCell)
     }
 }
 
 extension SearchUserViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return presenter.countUsers()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.userCell.identifier) as! UserTableViewCell
-
+        let user = presenter.getUser(indexPath)
+        cell.setData(user)
         return cell
     }
 
 }
 
+extension SearchUserViewController: SearchUserPresenterOutput {
+    func reloadData() {
+        tableView.reloadData()
+    }
+}
+
 extension SearchUserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        print("test")
+        presenter.didSelectRowAt(indexPath)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            tableView.deselectRow(at: indexPath, animated: true)
+        })
     }
 }
 
@@ -60,10 +74,6 @@ extension SearchUserViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.setShowsCancelButton(false, animated: true)
-    }
-
-    // 入力された文字出力
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        presenter.searchButtonClicked(searchBar.text)
     }
 }

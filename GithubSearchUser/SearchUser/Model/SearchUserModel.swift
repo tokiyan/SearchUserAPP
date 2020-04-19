@@ -8,6 +8,13 @@
 
 import Foundation
 
-final class SearchUserModel {
+protocol SearchUserModelInput {
+    func searchUser(q: String, completion: @escaping (Result) -> Void)
+}
+
+final class SearchUserModel: SearchUserModelInput {
+    func searchUser(q: String, completion: @escaping (Result) -> Void) {
+        Github().searchUser(q: q, completion: completion)
+    }
 
 }
