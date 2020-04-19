@@ -10,4 +10,6 @@ target 'GithubSearchUser' do
 
   pod 'R.swift'
 
+  pod 'Kingfisher'
+
 end
