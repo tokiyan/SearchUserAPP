@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search User View Controller-->
+        <!--Search User-->
         <scene sceneID="sXx-IT-gkU">
             <objects>
                 <viewController id="OiW-9Q-Orp" customClass="SearchUserViewController" customModule="GithubSearchUser" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Sa4-OZ-GQf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="OiW-9Q-Orp" id="5eF-nK-zjc"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fIR-GY-f48">
-                                <rect key="frame" x="0.0" y="56" width="375" height="611"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="OiW-9Q-Orp" id="vET-Zw-YbF"/>
@@ -44,6 +44,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dg9-cc-Ofo"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Search User" id="cx3-7F-qKl"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="searchBar" destination="Sa4-OZ-GQf" id="mRz-4a-9wI"/>
                         <outlet property="tableView" destination="fIR-GY-f48" id="STI-pQ-fhF"/>
