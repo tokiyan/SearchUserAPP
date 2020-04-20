@@ -40,7 +40,7 @@ final class SearchUserPresenter: SearchUserPresenterInput {
     }
 
     func searchButtonClicked(_ text: String?) {
-        if text != nil {
+        if text != "" {
             self.view.showNetworkIndicator(true)
             model.searchUser(q: text!, completion: { result in
                 self.view.showNetworkIndicator(false)
