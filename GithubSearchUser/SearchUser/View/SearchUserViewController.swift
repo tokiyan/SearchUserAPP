@@ -28,6 +28,20 @@ final class SearchUserViewController: UIViewController {
     }
 }
 
+extension SearchUserViewController: SearchUserPresenterOutput {
+    func reloadData() {
+        tableView.reloadData()
+    }
+
+    func pushDetal(_ user: User) {
+        let webdetailViewController = R.storyboard.webDetail.instantiateInitialViewController()!
+        webdetailViewController.setData(user)
+        self.navigationController?.pushViewController(webdetailViewController, animated: true)
+    }
+}
+
+// MARK: - TableView
+
 extension SearchUserViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.countUsers()
@@ -42,18 +56,6 @@ extension SearchUserViewController: UITableViewDataSource {
 
 }
 
-extension SearchUserViewController: SearchUserPresenterOutput {
-    func reloadData() {
-        tableView.reloadData()
-    }
-
-    func pushDetal(_ user: User) {
-        let webdetailViewController = R.storyboard.webDetail.instantiateInitialViewController()!
-        webdetailViewController.setData(user)
-        self.navigationController?.pushViewController(webdetailViewController, animated: true)
-    }
-}
-
 extension SearchUserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.didSelectRowAt(indexPath)
@@ -63,6 +65,8 @@ extension SearchUserViewController: UITableViewDelegate {
         })
     }
 }
+
+// MARK: - SearchBar
 
 extension SearchUserViewController: UISearchBarDelegate {
     // 検索バー編集開始時にキャンセルボタン有効化

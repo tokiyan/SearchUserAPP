@@ -51,7 +51,6 @@ final class SearchUserPresenter: SearchUserPresenterInput {
                 }
             })
         }
-        return
     }
     func getUser(_ at: IndexPath) -> User {
         return users[at.row]
