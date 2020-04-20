@@ -26,12 +26,17 @@ final class Github {
         let headers: HTTPHeaders = ["Content-Type": "application/json"]
 
         AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding(destination: .queryString), headers: headers).responseJSON { response in
-            guard let data = response.data else { return }
-            do {
-                let res = try JSONDecoder().decode(Response.self, from: data)
-                completion(.success(res))
+            switch response.result {
+            case .success:
+                guard let data = response.data else { return }
+                do {
+                    let res = try JSONDecoder().decode(Response.self, from: data)
+                    completion(.success(res))
 
-            } catch let error {
+                } catch let error {
+                    completion(.failure(error))
+                }
+            case .failure(let error):
                 completion(.failure(error))
             }
         }
