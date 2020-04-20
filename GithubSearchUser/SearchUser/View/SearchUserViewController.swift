@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ViewAnimator
 
 final class SearchUserViewController: UIViewController {
 
@@ -26,11 +27,26 @@ final class SearchUserViewController: UIViewController {
         presenter = SearchUserPresenter(view: self, model: model)
 
     }
+
+    func animateCell(fadeIn: Bool, completion: @escaping () -> Void = {}) {
+
+        let animation = AnimationType.from(direction: .bottom, offset: 30.0)
+        UIView.animate(views: self.tableView.visibleCells,
+                       animations: [animation],
+                       reversed: !fadeIn,
+                       initialAlpha: fadeIn ? 0.0 : 1.0,
+                       finalAlpha: fadeIn ? 1.0 : 0.0,
+                       delay: 0.0,
+                       completion: completion
+        )
+    }
 }
 
 extension SearchUserViewController: SearchUserPresenterOutput {
     func reloadData() {
-        tableView.reloadData()
+        self.tableView.reloadData()
+        // セルをフェードイン
+        animateCell(fadeIn: true)
     }
 
     func pushDetal(_ user: User) {
@@ -84,6 +100,9 @@ extension SearchUserViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.setShowsCancelButton(false, animated: true)
-        presenter.searchButtonClicked(searchBar.text)
+
+        // セルをフェードアウト
+        animateCell(fadeIn: false)
+        self.presenter.searchButtonClicked(searchBar.text)
     }
 }

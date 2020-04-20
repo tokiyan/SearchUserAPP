@@ -50,6 +50,9 @@ final class SearchUserPresenter: SearchUserPresenterInput {
                     self.view.reloadData()
                 case .failure(let error):
                     self.view.alertError(error)
+                    // エラー後にエラー前の検索結果のセルのフェードアウトが起こる現象を回避
+                    self.users = []
+                    self.view.reloadData()
                 }
             })
         }
