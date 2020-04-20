@@ -12,4 +12,6 @@ target 'GithubSearchUser' do
 
   pod 'Kingfisher'
 
+  pod "ViewAnimator"
+
 end

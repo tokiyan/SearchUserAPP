@@ -6,11 +6,13 @@ PODS:
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
+  - ViewAnimator (2.7.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.1)
   - Kingfisher
   - R.swift
+  - ViewAnimator
 
 SPEC REPOS:
   trunk:
@@ -18,13 +20,15 @@ SPEC REPOS:
     - Kingfisher
     - R.swift
     - R.swift.Library
+    - ViewAnimator
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
+  ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
 
-PODFILE CHECKSUM: 4ed15b038ea31d16d7bec8dba300c2f2c214972a
+PODFILE CHECKSUM: 2820e447ba651d7ff43d5f9401ca90792b24d1bc
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1
