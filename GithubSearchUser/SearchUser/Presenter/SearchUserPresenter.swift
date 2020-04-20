@@ -15,7 +15,7 @@ protocol SearchUserPresenterInput {
     func getUser(_ at: IndexPath) -> User
 }
 
-protocol SearchUserPresenterOutput: AnyObject {
+protocol SearchUserPresenterOutput: AlertError {
     func reloadData()
     func pushDetal(_ user: User)
 }
@@ -47,7 +47,7 @@ final class SearchUserPresenter: SearchUserPresenterInput {
                     self.users = res.items
                     self.view.reloadData()
                 case .failure(let error):
-                    break
+                    self.view.alertError(error)
                 }
             })
         }
