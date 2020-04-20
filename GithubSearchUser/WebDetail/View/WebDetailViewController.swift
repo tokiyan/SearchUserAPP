@@ -17,7 +17,7 @@ final class WebDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupWebView()
-        
+
         self.navigationItem.title = user.login
     }
 
