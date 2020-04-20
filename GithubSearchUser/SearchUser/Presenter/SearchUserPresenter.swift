@@ -15,7 +15,7 @@ protocol SearchUserPresenterInput {
     func getUser(_ at: IndexPath) -> User
 }
 
-protocol SearchUserPresenterOutput: AlertError {
+protocol SearchUserPresenterOutput: AlertError, ShowNetworkIndicator {
     func reloadData()
     func pushDetal(_ user: User)
 }
@@ -41,7 +41,9 @@ final class SearchUserPresenter: SearchUserPresenterInput {
 
     func searchButtonClicked(_ text: String?) {
         if text != nil {
+            self.view.showNetworkIndicator(true)
             model.searchUser(q: text!, completion: { result in
+                self.view.showNetworkIndicator(false)
                 switch result {
                 case .success(let res):
                     self.users = res.items

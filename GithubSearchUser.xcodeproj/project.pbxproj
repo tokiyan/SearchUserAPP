@@ -23,6 +23,7 @@
 		7FF1A131244C78BE006586C8 /* WebDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF1A130244C78BE006586C8 /* WebDetail.storyboard */; };
 		7FF1A133244C7AD0006586C8 /* WebDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1A132244C7AD0006586C8 /* WebDetailViewController.swift */; };
 		7FF1A13B244DE136006586C8 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1A13A244DE136006586C8 /* AlertError.swift */; };
+		7FF1A13D244DE158006586C8 /* ShowNetworkIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1A13C244DE158006586C8 /* ShowNetworkIndicator.swift */; };
 		C0AE0392592EDB419BB75BDD /* Pods_GithubSearchUser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC9AA5D0F1DDF6936669359 /* Pods_GithubSearchUser.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		7FF1A130244C78BE006586C8 /* WebDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebDetail.storyboard; sourceTree = "<group>"; };
 		7FF1A132244C7AD0006586C8 /* WebDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDetailViewController.swift; sourceTree = "<group>"; };
 		7FF1A13A244DE136006586C8 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
+		7FF1A13C244DE158006586C8 /* ShowNetworkIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNetworkIndicator.swift; sourceTree = "<group>"; };
 		B43AD78C0748550C1D01F66D /* Pods-GithubSearchUser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubSearchUser.release.xcconfig"; path = "Target Support Files/Pods-GithubSearchUser/Pods-GithubSearchUser.release.xcconfig"; sourceTree = "<group>"; };
 		EAC9AA5D0F1DDF6936669359 /* Pods_GithubSearchUser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubSearchUser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				7FF1A13A244DE136006586C8 /* AlertError.swift */,
+				7FF1A13C244DE158006586C8 /* ShowNetworkIndicator.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				7FF1A13B244DE136006586C8 /* AlertError.swift in Sources */,
 				7FE95EF1244AF69E000D150E /* R.generated.swift in Sources */,
 				7FF1A133244C7AD0006586C8 /* WebDetailViewController.swift in Sources */,
+				7FF1A13D244DE158006586C8 /* ShowNetworkIndicator.swift in Sources */,
 				7F10B229244B563300D72141 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
