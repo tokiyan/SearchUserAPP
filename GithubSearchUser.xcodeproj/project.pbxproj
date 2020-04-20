@@ -20,6 +20,7 @@
 		7FE95EEA244AF226000D150E /* SearchUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EE9244AF226000D150E /* SearchUserPresenter.swift */; };
 		7FE95EEE244AF248000D150E /* SearchUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EED244AF248000D150E /* SearchUserModel.swift */; };
 		7FE95EF1244AF69E000D150E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EF0244AF69E000D150E /* R.generated.swift */; };
+		7FEAB45D244E118B0002E421 /* AddBorderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAB45C244E118B0002E421 /* AddBorderConfig.swift */; };
 		7FF1A131244C78BE006586C8 /* WebDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF1A130244C78BE006586C8 /* WebDetail.storyboard */; };
 		7FF1A133244C7AD0006586C8 /* WebDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1A132244C7AD0006586C8 /* WebDetailViewController.swift */; };
 		7FF1A13B244DE136006586C8 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1A13A244DE136006586C8 /* AlertError.swift */; };
@@ -44,6 +45,7 @@
 		7FE95EE9244AF226000D150E /* SearchUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserPresenter.swift; sourceTree = "<group>"; };
 		7FE95EED244AF248000D150E /* SearchUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserModel.swift; sourceTree = "<group>"; };
 		7FE95EF0244AF69E000D150E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		7FEAB45C244E118B0002E421 /* AddBorderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBorderConfig.swift; sourceTree = "<group>"; };
 		7FF1A130244C78BE006586C8 /* WebDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebDetail.storyboard; sourceTree = "<group>"; };
 		7FF1A132244C7AD0006586C8 /* WebDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDetailViewController.swift; sourceTree = "<group>"; };
 		7FF1A13A244DE136006586C8 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
@@ -130,10 +132,11 @@
 		7FE95ECE244AEC74000D150E /* GithubSearchUser */ = {
 			isa = PBXGroup;
 			children = (
-				7FF1A139244DE124006586C8 /* Protocol */,
 				7F10B226244B560D00D72141 /* API */,
 				7FF1A12E244C7874006586C8 /* WebDetail */,
 				7FE95EE3244AF1C2000D150E /* SearchUser */,
+				7FF1A139244DE124006586C8 /* Protocol */,
+				7FEAB45B244E11530002E421 /* Extension */,
 				7FE95ECF244AEC74000D150E /* AppDelegate.swift */,
 				7FE95ED8244AEC78000D150E /* Assets.xcassets */,
 				7FE95EDA244AEC78000D150E /* LaunchScreen.storyboard */,
@@ -176,6 +179,14 @@
 				7FE95EED244AF248000D150E /* SearchUserModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7FEAB45B244E11530002E421 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7FEAB45C244E118B0002E421 /* AddBorderConfig.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		7FF1A12E244C7874006586C8 /* WebDetail */ = {
@@ -360,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FEAB45D244E118B0002E421 /* AddBorderConfig.swift in Sources */,
 				7F10B22D244C3D6C00D72141 /* Github.swift in Sources */,
 				7F10B22B244C3C8D00D72141 /* Response.swift in Sources */,
 				7FE95EEE244AF248000D150E /* SearchUserModel.swift in Sources */,
