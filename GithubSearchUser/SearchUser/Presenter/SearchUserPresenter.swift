@@ -18,6 +18,7 @@ protocol SearchUserPresenterInput {
 protocol SearchUserPresenterOutput: AlertError, ShowNetworkIndicator {
     func reloadData()
     func pushDetal(_ user: User)
+    func showNoResults(_ show: Bool)
 }
 
 final class SearchUserPresenter: SearchUserPresenterInput {
@@ -48,6 +49,7 @@ final class SearchUserPresenter: SearchUserPresenterInput {
                 case .success(let res):
                     self.users = res.items
                     self.view.reloadData()
+                    self.view.showNoResults(res.items.isEmpty)
                 case .failure(let error):
                     self.view.alertError(error)
                     // エラー後にエラー前の検索結果のセルのフェードアウトが起こる現象を回避

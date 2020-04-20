@@ -11,6 +11,7 @@ import ViewAnimator
 
 final class SearchUserViewController: UIViewController {
 
+    @IBOutlet weak var noResultsLabel: UILabel!
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView! {
         willSet {
@@ -53,6 +54,11 @@ extension SearchUserViewController: SearchUserPresenterOutput {
         let webdetailViewController = R.storyboard.webDetail.instantiateInitialViewController()!
         webdetailViewController.setData(user)
         self.navigationController?.pushViewController(webdetailViewController, animated: true)
+    }
+
+    func showNoResults(_ show: Bool) {
+        self.noResultsLabel.isHidden = !show
+        self.tableView.isHidden = show
     }
 }
 
