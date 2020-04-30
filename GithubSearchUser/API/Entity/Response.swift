@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct Response: Codable {
+struct Response: Codable {
     let totalCount: Int
     let incompleteResults: Bool
     let items: [User]
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
         case incompleteResults = "incomplete_results"
         case items

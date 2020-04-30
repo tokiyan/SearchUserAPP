@@ -10,9 +10,9 @@ import Foundation
 
 protocol SearchUserPresenterInput {
     func countUsers() -> Int
-    func didSelectRowAt(_ at: IndexPath)
+    func didSelectRowAt(_ indexPath: IndexPath)
     func searchButtonClicked(_ text: String?)
-    func getUser(_ at: IndexPath) -> User
+    func getUser(_ indexPath: IndexPath) -> User
 }
 
 protocol SearchUserPresenterOutput: AlertError, ShowNetworkIndicator {
@@ -36,30 +36,31 @@ final class SearchUserPresenter: SearchUserPresenterInput {
         return users.count
     }
 
-    func didSelectRowAt(_ at: IndexPath) {
-        view.pushDetal(getUser(at))
+    func didSelectRowAt(_ indexPath: IndexPath) {
+        view.pushDetal(getUser(indexPath))
     }
 
     func searchButtonClicked(_ text: String?) {
-        if text != "" {
-            self.view.showNetworkIndicator(true)
-            model.searchUser(q: text!, completion: { result in
-                self.view.showNetworkIndicator(false)
-                switch result {
-                case .success(let res):
-                    self.users = res.items
-                    self.view.reloadData()
-                    self.view.showNoResults(res.items.isEmpty)
-                case .failure(let error):
-                    self.view.alertError(error)
-                    // エラー後にエラー前の検索結果のセルのフェードアウトが起こる現象を回避
-                    self.users = []
-                    self.view.reloadData()
-                }
-            })
-        }
+
+        guard !text!.isEmpty else { return }
+
+        self.view.showNetworkIndicator(true)
+        model.searchUser(q: text!, completion: { result in
+            self.view.showNetworkIndicator(false)
+            switch result {
+            case .success(let res):
+                self.users = res.items
+                self.view.reloadData()
+                self.view.showNoResults(res.items.isEmpty)
+            case .failure(let error):
+                self.view.alertError(error)
+                // エラー後にエラー前の検索結果のセルのフェードアウトが起こる現象を回避
+                self.users = []
+                self.view.reloadData()
+            }
+        })
     }
-    func getUser(_ at: IndexPath) -> User {
-        return users[at.row]
+    func getUser(_ indexPath: IndexPath) -> User {
+        return users[indexPath.row]
     }
 }

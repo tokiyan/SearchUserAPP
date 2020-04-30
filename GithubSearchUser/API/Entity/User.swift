@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct User: Codable {
+struct User: Codable {
     let login: String
     let id: Int
     let nodeID: String
@@ -19,7 +19,7 @@ public struct User: Codable {
     let type: String
     let score: Int
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case login, id
         case nodeID = "node_id"
         case avatarURL = "avatar_url"

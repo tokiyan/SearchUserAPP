@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-public enum Result {
+enum Result {
     case success(Response)
     case failure(Error)
 }
