@@ -223,7 +223,7 @@
 			buildConfigurationList = 7FE95EE0244AEC78000D150E /* Build configuration list for PBXNativeTarget "GithubSearchUser" */;
 			buildPhases = (
 				B5746B56B31F9A9B74BE7F9F /* [CP] Check Pods Manifest.lock */,
-				7FE95EEF244AF5BE000D150E /* ShellScript */,
+				7FE95EEF244AF5BE000D150E /* Run Script */,
 				7FE95EC8244AEC74000D150E /* Sources */,
 				7FE95EC9244AEC74000D150E /* Frameworks */,
 				7FE95ECA244AEC74000D150E /* Resources */,
@@ -288,7 +288,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7FE95EEF244AF5BE000D150E /* ShellScript */ = {
+		7FE95EEF244AF5BE000D150E /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -298,6 +298,7 @@
 			inputPaths = (
 				"$TEMP_DIR/rswift-lastrun",
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
