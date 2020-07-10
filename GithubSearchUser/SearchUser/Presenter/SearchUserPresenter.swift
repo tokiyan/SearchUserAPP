@@ -42,7 +42,13 @@ final class SearchUserPresenter: SearchUserPresenterInput {
 
     func searchButtonClicked(_ text: String?) {
 
-        guard !text!.isEmpty else { return }
+        if text!.isEmpty {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self.users = []
+                self.view.reloadData()
+            })
+            return
+        }
 
         self.view.showNetworkIndicator(true)
         model.searchUser(q: text!, completion: { result in
