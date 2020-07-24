@@ -21,4 +21,4 @@ MVPで実装しました。
 |  ViewAnimator  |  洒落乙アニメーションが簡単！  |
 
 # 洒落乙アニメーションデモ
-![Untitled](https://user-images.githubusercontent.com/63180526/87175708-03477b80-c314-11ea-9c89-8bc2fc76e842.gif)
+![animation](https://user-images.githubusercontent.com/63180526/88397777-68649c00-cdff-11ea-91f3-dff8457ea758.gif)
