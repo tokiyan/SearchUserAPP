@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OiW-9Q-Orp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OiW-9Q-Orp">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,15 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="username" translatesAutoresizingMaskIntoConstraints="NO" id="Sa4-OZ-GQf">
-                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="OiW-9Q-Orp" id="5eF-nK-zjc"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fIR-GY-f48">
-                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="OiW-9Q-Orp" id="vET-Zw-YbF"/>
@@ -32,7 +25,7 @@
                                 </connections>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ho-zF-Jdg">
-                                <rect key="frame" x="126.5" y="318.5" width="122.5" height="30"/>
+                                <rect key="frame" x="126.5" y="290.5" width="122.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,13 +35,10 @@
                         <constraints>
                             <constraint firstItem="fIR-GY-f48" firstAttribute="trailing" secondItem="dg9-cc-Ofo" secondAttribute="trailing" id="13u-1I-cYR"/>
                             <constraint firstItem="3ho-zF-Jdg" firstAttribute="centerY" secondItem="fIR-GY-f48" secondAttribute="centerY" constant="-50" id="1nS-1K-Jwy"/>
-                            <constraint firstItem="Sa4-OZ-GQf" firstAttribute="trailing" secondItem="dg9-cc-Ofo" secondAttribute="trailing" id="Q6L-4p-g5s"/>
-                            <constraint firstItem="fIR-GY-f48" firstAttribute="top" secondItem="Sa4-OZ-GQf" secondAttribute="bottom" id="Vra-F6-sOU"/>
-                            <constraint firstItem="Sa4-OZ-GQf" firstAttribute="top" secondItem="dg9-cc-Ofo" secondAttribute="top" id="gcw-dk-4TI"/>
+                            <constraint firstItem="fIR-GY-f48" firstAttribute="top" secondItem="dg9-cc-Ofo" secondAttribute="top" id="QNB-z6-SIt"/>
                             <constraint firstItem="fIR-GY-f48" firstAttribute="bottom" secondItem="3fw-6c-OMt" secondAttribute="bottom" id="mh4-mW-2Rl"/>
                             <constraint firstItem="fIR-GY-f48" firstAttribute="leading" secondItem="dg9-cc-Ofo" secondAttribute="leading" id="qpw-SI-421"/>
                             <constraint firstItem="3ho-zF-Jdg" firstAttribute="centerX" secondItem="fIR-GY-f48" secondAttribute="centerX" id="wtB-YS-4pd"/>
-                            <constraint firstItem="Sa4-OZ-GQf" firstAttribute="leading" secondItem="dg9-cc-Ofo" secondAttribute="leading" id="x6I-lS-peN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dg9-cc-Ofo"/>
                     </view>
@@ -56,7 +46,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="noResultsLabel" destination="3ho-zF-Jdg" id="oWi-Q8-LqF"/>
-                        <outlet property="searchBar" destination="Sa4-OZ-GQf" id="mRz-4a-9wI"/>
                         <outlet property="tableView" destination="fIR-GY-f48" id="STI-pQ-fhF"/>
                     </connections>
                 </viewController>

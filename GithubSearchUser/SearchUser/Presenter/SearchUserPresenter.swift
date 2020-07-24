@@ -13,6 +13,7 @@ protocol SearchUserPresenterInput {
     func didSelectRowAt(_ indexPath: IndexPath)
     func searchButtonClicked(_ text: String?)
     func getUser(_ indexPath: IndexPath) -> User
+    func clearResults()
 }
 
 protocol SearchUserPresenterOutput: AlertError, ShowNetworkIndicator {
@@ -44,8 +45,7 @@ final class SearchUserPresenter: SearchUserPresenterInput {
 
         if text!.isEmpty {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                self.users = []
-                self.view.reloadData()
+                self.clearResults()
             })
             return
         }
@@ -61,12 +61,17 @@ final class SearchUserPresenter: SearchUserPresenterInput {
             case .failure(let error):
                 self.view.alertError(error)
                 // エラー後にエラー前の検索結果のセルのフェードアウトが起こる現象を回避
-                self.users = []
-                self.view.reloadData()
+                self.clearResults()
             }
         })
     }
+
     func getUser(_ indexPath: IndexPath) -> User {
         return users[indexPath.row]
+    }
+
+    func clearResults() {
+        self.users = []
+        self.view.reloadData()
     }
 }

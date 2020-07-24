@@ -12,7 +12,6 @@ import ViewAnimator
 final class SearchUserViewController: UIViewController {
 
     @IBOutlet private weak var noResultsLabel: UILabel!
-    @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView! {
         willSet {
             newValue.register(R.nib.userTableViewCell)
@@ -27,9 +26,30 @@ final class SearchUserViewController: UIViewController {
         let model = SearchUserModel()
         presenter = SearchUserPresenter(view: self, model: model)
 
+        setupSearchBar()
     }
 
-    func animateCell(fadeIn: Bool, completion: @escaping () -> Void = {}) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.largeTitleDisplayMode = .always
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationItem.largeTitleDisplayMode = .never
+    }
+
+    func setupSearchBar() {
+        let searchController = UISearchController(searchResultsController: nil)
+        self.definesPresentationContext = true
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "userName"
+        searchController.searchBar.delegate = self
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
+
+    func animateCell(fadeIn: Bool, completion: (() -> Void)? = nil) {
 
         let animation = AnimationType.from(direction: .bottom, offset: 30.0)
         UIView.animate(views: self.tableView.visibleCells,
@@ -91,24 +111,27 @@ extension SearchUserViewController: UITableViewDelegate {
 // MARK: - SearchBar
 
 extension SearchUserViewController: UISearchBarDelegate {
-    // 検索バー編集開始時にキャンセルボタン有効化
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.setShowsCancelButton(true, animated: true)
-    }
-
-    // キャンセルボタンでキャセルボタン非表示
+    // キャンセルボタンでリセット
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        searchBar.setShowsCancelButton(false, animated: true)
-    }
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.tableView.setContentOffset(.zero, animated: false)
+        self.animateCell(fadeIn: false) {
+            self.presenter.clearResults()
+            self.navigationItem.largeTitleDisplayMode = .automatic
+        }
 
+    }
     // エンターキーで検索
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        searchBar.setShowsCancelButton(false, animated: true)
-
         // セルをフェードアウト
         animateCell(fadeIn: false)
         self.presenter.searchButtonClicked(searchBar.text)
+    }
+}
+
+extension SearchUserViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        navigationItem.searchController?.searchBar.resignFirstResponder()
     }
 }

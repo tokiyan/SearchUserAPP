@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let searchUserViewController = R.storyboard.searchUser.instantiateInitialViewController()!
 
         let navigationController = UINavigationController(rootViewController: searchUserViewController)
-
+        navigationController.navigationBar.prefersLargeTitles = true
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
