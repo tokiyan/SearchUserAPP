@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let searchUserViewController = R.storyboard.searchUser.instantiateInitialViewController()!
+        let searchUserViewController = SearchUserBuilder.build()
 
         let navigationController = UINavigationController(rootViewController: searchUserViewController)
         navigationController.navigationBar.prefersLargeTitles = true

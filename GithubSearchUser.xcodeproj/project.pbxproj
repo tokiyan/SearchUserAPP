@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		152031312679FF520060BC24 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152031302679FF520060BC24 /* Requestable.swift */; };
+		15203134267A0CBD0060BC24 /* GetSearchUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15203133267A0CBD0060BC24 /* GetSearchUserRequest.swift */; };
+		15203138267A12A90060BC24 /* SearchUserAPIGatewayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15203137267A12A90060BC24 /* SearchUserAPIGatewayProvider.swift */; };
+		1520313B267A159B0060BC24 /* SearchUserRepositoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520313A267A159B0060BC24 /* SearchUserRepositoryProvider.swift */; };
+		1520313D267A161E0060BC24 /* SearchUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520313C267A161E0060BC24 /* SearchUserUseCase.swift */; };
+		15203140267A180F0060BC24 /* SearchUserBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520313F267A180F0060BC24 /* SearchUserBuilder.swift */; };
+		15203143267A18510060BC24 /* SearchUserWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15203142267A18510060BC24 /* SearchUserWireframe.swift */; };
+		15203148267A1DBC0060BC24 /* WebDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15203147267A1DBC0060BC24 /* WebDetailBuilder.swift */; };
+		1520314C267A1E0F0060BC24 /* WebDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520314A267A1E0F0060BC24 /* WebDetailWireframe.swift */; };
+		1520314F267A1F8A0060BC24 /* WebDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520314E267A1F8A0060BC24 /* WebDetailPresenter.swift */; };
+		15203151267A21AA0060BC24 /* TransitToWebDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15203150267A21AA0060BC24 /* TransitToWebDetailWireframe.swift */; };
+		15203153267A21F10060BC24 /* TransitToSearchUserWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15203152267A21F10060BC24 /* TransitToSearchUserWireframe.swift */; };
 		7F10B223244B399200D72141 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10B221244B399200D72141 /* UserTableViewCell.swift */; };
 		7F10B224244B399200D72141 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F10B222244B399200D72141 /* UserTableViewCell.xib */; };
 		7F10B229244B563300D72141 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10B228244B563300D72141 /* User.swift */; };
 		7F10B22B244C3C8D00D72141 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10B22A244C3C8D00D72141 /* Response.swift */; };
-		7F10B22D244C3D6C00D72141 /* Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10B22C244C3D6C00D72141 /* Github.swift */; };
 		7F79425A245AFC6D008DE3A8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F794259245AFC6D008DE3A8 /* WebKit.framework */; };
 		7FE95ED0244AEC74000D150E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95ECF244AEC74000D150E /* AppDelegate.swift */; };
 		7FE95ED9244AEC78000D150E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE95ED8244AEC78000D150E /* Assets.xcassets */; };
@@ -19,7 +30,6 @@
 		7FE95EE5244AF1E7000D150E /* SearchUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE95EE4244AF1E7000D150E /* SearchUser.storyboard */; };
 		7FE95EE7244AF1FB000D150E /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EE6244AF1FB000D150E /* SearchUserViewController.swift */; };
 		7FE95EEA244AF226000D150E /* SearchUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EE9244AF226000D150E /* SearchUserPresenter.swift */; };
-		7FE95EEE244AF248000D150E /* SearchUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EED244AF248000D150E /* SearchUserModel.swift */; };
 		7FE95EF1244AF69E000D150E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EF0244AF69E000D150E /* R.generated.swift */; };
 		7FEAB45D244E118B0002E421 /* AddBorderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAB45C244E118B0002E421 /* AddBorderConfig.swift */; };
 		7FF1A131244C78BE006586C8 /* WebDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF1A130244C78BE006586C8 /* WebDetail.storyboard */; };
@@ -30,12 +40,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		152031302679FF520060BC24 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		15203133267A0CBD0060BC24 /* GetSearchUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSearchUserRequest.swift; sourceTree = "<group>"; };
+		15203137267A12A90060BC24 /* SearchUserAPIGatewayProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserAPIGatewayProvider.swift; sourceTree = "<group>"; };
+		1520313A267A159B0060BC24 /* SearchUserRepositoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserRepositoryProvider.swift; sourceTree = "<group>"; };
+		1520313C267A161E0060BC24 /* SearchUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserUseCase.swift; sourceTree = "<group>"; };
+		1520313F267A180F0060BC24 /* SearchUserBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserBuilder.swift; sourceTree = "<group>"; };
+		15203142267A18510060BC24 /* SearchUserWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserWireframe.swift; sourceTree = "<group>"; };
+		15203147267A1DBC0060BC24 /* WebDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDetailBuilder.swift; sourceTree = "<group>"; };
+		1520314A267A1E0F0060BC24 /* WebDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDetailWireframe.swift; sourceTree = "<group>"; };
+		1520314E267A1F8A0060BC24 /* WebDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDetailPresenter.swift; sourceTree = "<group>"; };
+		15203150267A21AA0060BC24 /* TransitToWebDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitToWebDetailWireframe.swift; sourceTree = "<group>"; };
+		15203152267A21F10060BC24 /* TransitToSearchUserWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitToSearchUserWireframe.swift; sourceTree = "<group>"; };
 		3EC1A5106341DC6EAC75D5F1 /* Pods-GithubSearchUser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubSearchUser.debug.xcconfig"; path = "Target Support Files/Pods-GithubSearchUser/Pods-GithubSearchUser.debug.xcconfig"; sourceTree = "<group>"; };
 		7F10B221244B399200D72141 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		7F10B222244B399200D72141 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		7F10B228244B563300D72141 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7F10B22A244C3C8D00D72141 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		7F10B22C244C3D6C00D72141 /* Github.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Github.swift; sourceTree = "<group>"; };
 		7F794259245AFC6D008DE3A8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		7FE95ECC244AEC74000D150E /* GithubSearchUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubSearchUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE95ECF244AEC74000D150E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +66,6 @@
 		7FE95EE4244AF1E7000D150E /* SearchUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchUser.storyboard; sourceTree = "<group>"; };
 		7FE95EE6244AF1FB000D150E /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
 		7FE95EE9244AF226000D150E /* SearchUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserPresenter.swift; sourceTree = "<group>"; };
-		7FE95EED244AF248000D150E /* SearchUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserModel.swift; sourceTree = "<group>"; };
 		7FE95EF0244AF69E000D150E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		7FEAB45C244E118B0002E421 /* AddBorderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBorderConfig.swift; sourceTree = "<group>"; };
 		7FF1A130244C78BE006586C8 /* WebDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebDetail.storyboard; sourceTree = "<group>"; };
@@ -78,6 +98,188 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		152031222679D9870060BC24 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				15203135267A12800060BC24 /* Gateways */,
+				7F10B226244B560D00D72141 /* APIs */,
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		152031232679D98F0060BC24 /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				152031262679DA0B0060BC24 /* UseCases */,
+				152031252679D9F80060BC24 /* Models */,
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		152031242679D9EC0060BC24 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				7FE95ECF244AEC74000D150E /* AppDelegate.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		152031252679D9F80060BC24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		152031262679DA0B0060BC24 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1520313C267A161E0060BC24 /* SearchUserUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		152031272679DA360060BC24 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				152031282679DA3D0060BC24 /* Extensions */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		152031282679DA3D0060BC24 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7FEAB45C244E118B0002E421 /* AddBorderConfig.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		152031292679DA800060BC24 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				1520312B2679DC910060BC24 /* LaunchScreen */,
+				7FE95EE3244AF1C2000D150E /* SearchUser */,
+				7FF1A12E244C7874006586C8 /* WebDetail */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		1520312A2679DA9F0060BC24 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1520312D2679F85C0060BC24 /* generated */,
+				7FE95ED8244AEC78000D150E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1520312B2679DC910060BC24 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1520312C2679DCA40060BC24 /* View */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		1520312C2679DCA40060BC24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FE95EDA244AEC78000D150E /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1520312D2679F85C0060BC24 /* generated */ = {
+			isa = PBXGroup;
+			children = (
+				7FE95EF0244AF69E000D150E /* R.generated.swift */,
+			);
+			path = generated;
+			sourceTree = "<group>";
+		};
+		15203132267A0CA30060BC24 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				15203133267A0CBD0060BC24 /* GetSearchUserRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		15203135267A12800060BC24 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				15203136267A12950060BC24 /* APIs */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		15203136267A12950060BC24 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				15203137267A12A90060BC24 /* SearchUserAPIGatewayProvider.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		15203139267A15850060BC24 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1520313A267A159B0060BC24 /* SearchUserRepositoryProvider.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		1520313E267A17F80060BC24 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				1520313F267A180F0060BC24 /* SearchUserBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		15203141267A18360060BC24 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				15203142267A18510060BC24 /* SearchUserWireframe.swift */,
+				15203152267A21F10060BC24 /* TransitToSearchUserWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		15203144267A1ADB0060BC24 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				7F10B220244B396B00D72141 /* UserCell */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		15203145267A1AF50060BC24 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				15203147267A1DBC0060BC24 /* WebDetailBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		15203146267A1AFB0060BC24 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				1520314A267A1E0F0060BC24 /* WebDetailWireframe.swift */,
+				15203150267A21AA0060BC24 /* TransitToWebDetailWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		1520314D267A1F7D0060BC24 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1520314E267A1F8A0060BC24 /* WebDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		44E5E463EDDD41215D9A76A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,28 +298,29 @@
 			path = UserCell;
 			sourceTree = "<group>";
 		};
-		7F10B226244B560D00D72141 /* API */ = {
+		7F10B226244B560D00D72141 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
-				7F10B227244B562000D72141 /* Entity */,
-				7F10B22C244C3D6C00D72141 /* Github.swift */,
+				15203132267A0CA30060BC24 /* Requests */,
+				7F10B227244B562000D72141 /* Entities */,
+				152031302679FF520060BC24 /* Requestable.swift */,
 			);
-			path = API;
+			path = APIs;
 			sourceTree = "<group>";
 		};
-		7F10B227244B562000D72141 /* Entity */ = {
+		7F10B227244B562000D72141 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				7F10B228244B563300D72141 /* User.swift */,
 				7F10B22A244C3C8D00D72141 /* Response.swift */,
 			);
-			path = Entity;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		7FE95EC3244AEC74000D150E = {
 			isa = PBXGroup;
 			children = (
-				7FE95EF0244AF69E000D150E /* R.generated.swift */,
+				152031222679D9870060BC24 /* Datasource */,
 				7FE95ECE244AEC74000D150E /* GithubSearchUser */,
 				7FE95ECD244AEC74000D150E /* Products */,
 				14413F0631DC8C535C697234 /* Pods */,
@@ -136,15 +339,14 @@
 		7FE95ECE244AEC74000D150E /* GithubSearchUser */ = {
 			isa = PBXGroup;
 			children = (
-				7F10B226244B560D00D72141 /* API */,
-				7FF1A12E244C7874006586C8 /* WebDetail */,
-				7FE95EE3244AF1C2000D150E /* SearchUser */,
-				7FF1A139244DE124006586C8 /* Protocol */,
-				7FEAB45B244E11530002E421 /* Extension */,
-				7FE95ECF244AEC74000D150E /* AppDelegate.swift */,
-				7FE95ED8244AEC78000D150E /* Assets.xcassets */,
-				7FE95EDA244AEC78000D150E /* LaunchScreen.storyboard */,
+				15203139267A15850060BC24 /* Repositories */,
 				7FE95EDD244AEC78000D150E /* Info.plist */,
+				1520312A2679DA9F0060BC24 /* Resources */,
+				152031292679DA800060BC24 /* Presenters */,
+				152031272679DA360060BC24 /* Libraries */,
+				152031242679D9EC0060BC24 /* Applications */,
+				152031232679D98F0060BC24 /* Domains */,
+				7FF1A139244DE124006586C8 /* Protocol */,
 			);
 			path = GithubSearchUser;
 			sourceTree = "<group>";
@@ -152,7 +354,8 @@
 		7FE95EE3244AF1C2000D150E /* SearchUser */ = {
 			isa = PBXGroup;
 			children = (
-				7FE95EEC244AF239000D150E /* Model */,
+				15203141267A18360060BC24 /* Wireframe */,
+				1520313E267A17F80060BC24 /* Builder */,
 				7FE95EE8244AF202000D150E /* View */,
 				7FE95EEB244AF230000D150E /* Presenter */,
 			);
@@ -162,9 +365,9 @@
 		7FE95EE8244AF202000D150E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				15203144267A1ADB0060BC24 /* Parts */,
 				7FE95EE4244AF1E7000D150E /* SearchUser.storyboard */,
 				7FE95EE6244AF1FB000D150E /* SearchUserViewController.swift */,
-				7F10B220244B396B00D72141 /* UserCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,25 +380,12 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		7FE95EEC244AF239000D150E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7FE95EED244AF248000D150E /* SearchUserModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7FEAB45B244E11530002E421 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				7FEAB45C244E118B0002E421 /* AddBorderConfig.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		7FF1A12E244C7874006586C8 /* WebDetail */ = {
 			isa = PBXGroup;
 			children = (
+				1520314D267A1F7D0060BC24 /* Presenter */,
+				15203146267A1AFB0060BC24 /* Wireframe */,
+				15203145267A1AF50060BC24 /* Builder */,
 				7FF1A12F244C78B0006586C8 /* View */,
 			);
 			path = WebDetail;
@@ -306,11 +496,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				$SRCROOT/$PROJECT_NAME/Resources/generated/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/Resources/generated/R.generated.swift\"\n";
 		};
 		7FE95EF2244B009A000D150E /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -376,19 +566,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1520314F267A1F8A0060BC24 /* WebDetailPresenter.swift in Sources */,
 				7FEAB45D244E118B0002E421 /* AddBorderConfig.swift in Sources */,
-				7F10B22D244C3D6C00D72141 /* Github.swift in Sources */,
+				1520313B267A159B0060BC24 /* SearchUserRepositoryProvider.swift in Sources */,
+				152031312679FF520060BC24 /* Requestable.swift in Sources */,
 				7F10B22B244C3C8D00D72141 /* Response.swift in Sources */,
-				7FE95EEE244AF248000D150E /* SearchUserModel.swift in Sources */,
 				7FE95ED0244AEC74000D150E /* AppDelegate.swift in Sources */,
+				15203148267A1DBC0060BC24 /* WebDetailBuilder.swift in Sources */,
 				7FE95EEA244AF226000D150E /* SearchUserPresenter.swift in Sources */,
+				1520313D267A161E0060BC24 /* SearchUserUseCase.swift in Sources */,
+				15203140267A180F0060BC24 /* SearchUserBuilder.swift in Sources */,
 				7FE95EE7244AF1FB000D150E /* SearchUserViewController.swift in Sources */,
 				7F10B223244B399200D72141 /* UserTableViewCell.swift in Sources */,
+				15203143267A18510060BC24 /* SearchUserWireframe.swift in Sources */,
 				7FF1A13B244DE136006586C8 /* AlertError.swift in Sources */,
+				15203153267A21F10060BC24 /* TransitToSearchUserWireframe.swift in Sources */,
 				7FE95EF1244AF69E000D150E /* R.generated.swift in Sources */,
+				1520314C267A1E0F0060BC24 /* WebDetailWireframe.swift in Sources */,
 				7FF1A133244C7AD0006586C8 /* WebDetailViewController.swift in Sources */,
 				7FF1A13D244DE158006586C8 /* ShowNetworkIndicator.swift in Sources */,
+				15203138267A12A90060BC24 /* SearchUserAPIGatewayProvider.swift in Sources */,
+				15203134267A0CBD0060BC24 /* GetSearchUserRequest.swift in Sources */,
 				7F10B229244B563300D72141 /* User.swift in Sources */,
+				15203151267A21AA0060BC24 /* TransitToWebDetailWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +726,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3S4QJPAPX;
+				DEVELOPMENT_TEAM = 2NVJRT84JB;
 				INFOPLIST_FILE = GithubSearchUser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,7 +745,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3S4QJPAPX;
+				DEVELOPMENT_TEAM = 2NVJRT84JB;
 				INFOPLIST_FILE = GithubSearchUser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

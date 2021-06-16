@@ -12,20 +12,19 @@ import WebKit
 final class WebDetailViewController: UIViewController {
 
     @IBOutlet private weak var webView: WKWebView!
-    private var user: User!
+
+    var presenter: WebDetailPresenterInput!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupWebView()
+        presenter.requestUser()
+    }
+}
 
+extension WebDetailViewController: WebDetailPresenterOutput {
+
+    func setWebView(_ user: User) {
         self.navigationItem.title = user.login
-    }
-
-    public func setData(_ user: User) {
-        self.user = user
-    }
-
-    private func setupWebView() {
         let url = URL(string: user.htmlURL)
         let request = URLRequest(url: url!)
         webView.load(request)
