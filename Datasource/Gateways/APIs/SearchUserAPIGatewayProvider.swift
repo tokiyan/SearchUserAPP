@@ -26,7 +26,7 @@ final class SearchUserAPIGatewayImpl: SearchUserAPIGateway {
 
     func get(q: String, completion: @escaping (Result) -> Void) {
         let request = GetSearchUserRequest(q: q)
-        AF.request(request.requestURL, method: request.method, parameters: request.queryParameters, encoding: URLEncoding(destination: .queryString), headers: request.headers).responseJSON { response in
+        AF.request(request) { response in
             switch response.result {
             case .success:
                 guard let data = response.data else { return }
