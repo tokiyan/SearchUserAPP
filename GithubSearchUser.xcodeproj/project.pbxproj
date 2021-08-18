@@ -30,7 +30,6 @@
 		7FE95EDC244AEC78000D150E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE95EDA244AEC78000D150E /* LaunchScreen.storyboard */; };
 		7FE95EE5244AF1E7000D150E /* SearchUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE95EE4244AF1E7000D150E /* SearchUser.storyboard */; };
 		7FE95EE7244AF1FB000D150E /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EE6244AF1FB000D150E /* SearchUserViewController.swift */; };
-		7FE95EEA244AF226000D150E /* SearchUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EE9244AF226000D150E /* SearchUserPresenter.swift */; };
 		7FE95EF1244AF69E000D150E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95EF0244AF69E000D150E /* R.generated.swift */; };
 		7FEAB45D244E118B0002E421 /* AddBorderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAB45C244E118B0002E421 /* AddBorderConfig.swift */; };
 		7FF1A131244C78BE006586C8 /* WebDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF1A130244C78BE006586C8 /* WebDetail.storyboard */; };
@@ -67,7 +66,6 @@
 		7FE95EDD244AEC78000D150E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FE95EE4244AF1E7000D150E /* SearchUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchUser.storyboard; sourceTree = "<group>"; };
 		7FE95EE6244AF1FB000D150E /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
-		7FE95EE9244AF226000D150E /* SearchUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserPresenter.swift; sourceTree = "<group>"; };
 		7FE95EF0244AF69E000D150E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		7FEAB45C244E118B0002E421 /* AddBorderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBorderConfig.swift; sourceTree = "<group>"; };
 		7FF1A130244C78BE006586C8 /* WebDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebDetail.storyboard; sourceTree = "<group>"; };
@@ -359,28 +357,19 @@
 			children = (
 				15203141267A18360060BC24 /* Wireframe */,
 				1520313E267A17F80060BC24 /* Builder */,
-				7FE95EE8244AF202000D150E /* View */,
-				7FE95EEB244AF230000D150E /* Presenter */,
+				7FE95EE8244AF202000D150E /* ViewController */,
 			);
 			path = SearchUser;
 			sourceTree = "<group>";
 		};
-		7FE95EE8244AF202000D150E /* View */ = {
+		7FE95EE8244AF202000D150E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				15203144267A1ADB0060BC24 /* Parts */,
 				7FE95EE4244AF1E7000D150E /* SearchUser.storyboard */,
 				7FE95EE6244AF1FB000D150E /* SearchUserViewController.swift */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7FE95EEB244AF230000D150E /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				7FE95EE9244AF226000D150E /* SearchUserPresenter.swift */,
-			);
-			path = Presenter;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		7FF1A12E244C7874006586C8 /* WebDetail */ = {
@@ -576,7 +565,6 @@
 				7F10B22B244C3C8D00D72141 /* Response.swift in Sources */,
 				7FE95ED0244AEC74000D150E /* AppDelegate.swift in Sources */,
 				15203148267A1DBC0060BC24 /* WebDetailBuilder.swift in Sources */,
-				7FE95EEA244AF226000D150E /* SearchUserPresenter.swift in Sources */,
 				1520313D267A161E0060BC24 /* SearchUserUseCase.swift in Sources */,
 				15203140267A180F0060BC24 /* SearchUserBuilder.swift in Sources */,
 				7FE95EE7244AF1FB000D150E /* SearchUserViewController.swift in Sources */,
