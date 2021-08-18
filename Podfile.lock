@@ -1,4 +1,7 @@
 PODS:
+  - Action (5.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - Alamofire (5.1.0)
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
@@ -6,29 +9,58 @@ PODS:
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
+  - RxWebKit (2.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - Unio (0.11.0):
+    - RxRelay (~> 6.0)
+    - RxSwift (~> 6.0)
   - ViewAnimator (2.7.0)
 
 DEPENDENCIES:
+  - Action
   - Alamofire (~> 5.1)
   - Kingfisher
   - R.swift
+  - RxCocoa (= 6.2.0)
+  - RxSwift (= 6.2.0)
+  - RxWebKit
+  - Unio
   - ViewAnimator
 
 SPEC REPOS:
   trunk:
+    - Action
     - Alamofire
     - Kingfisher
     - R.swift
     - R.swift.Library
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - RxWebKit
+    - Unio
     - ViewAnimator
 
 SPEC CHECKSUMS:
+  Action: 47f1825511907b4fcd79dd7a7db9526c20f78018
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  RxWebKit: f1d621d914e230f8aff65a7f03c969dced8915eb
+  Unio: 6e57bd33dbcf38d281b0b420f75c0eae3bef0cf3
   ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
 
-PODFILE CHECKSUM: 2820e447ba651d7ff43d5f9401ca90792b24d1bc
+PODFILE CHECKSUM: 2b2a908aa833a9856c57345be0ceabe5494310dd
 
 COCOAPODS: 1.10.1
