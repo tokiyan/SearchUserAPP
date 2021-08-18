@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 final class SearchUserRepositoryProvider {
 
@@ -18,7 +19,7 @@ final class SearchUserRepositoryProvider {
 }
 
 protocol SearchUserRepository {
-    func get(q: String, completion: @escaping (Result) -> Void)
+    func get(_ q: String) -> Observable<SearchUserResponse>
 }
 
 final class SearchUserRepositoryImpl: SearchUserRepository {
@@ -29,7 +30,7 @@ final class SearchUserRepositoryImpl: SearchUserRepository {
         self.api = api
     }
 
-    func get(q: String, completion: @escaping (Result) -> Void) {
-        api.get(q: q, completion: completion)
+    func get(_ q: String) -> Observable<SearchUserResponse> {
+        api.get(q)
     }
 }

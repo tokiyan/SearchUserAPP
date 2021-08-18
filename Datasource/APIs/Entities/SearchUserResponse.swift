@@ -1,5 +1,5 @@
 //
-//  Response.swift
+//  SearchUserResponse.swift
 //  GithubSearchUser
 //
 //  Created by TOKIYA on 2020/04/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Response: Codable {
+public struct SearchUserResponse: Codable {
     let totalCount: Int
     let incompleteResults: Bool
     let items: [User]

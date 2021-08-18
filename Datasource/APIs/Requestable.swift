@@ -9,12 +9,10 @@
 import Foundation
 import Alamofire
 
-public enum Result {
-    case success(Response)
-    case failure(Error)
-}
-
 protocol Requestable {
+
+    associatedtype Response: Codable
+
     var path: String { get }
 
     var method: HTTPMethod { get }

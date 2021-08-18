@@ -14,16 +14,18 @@ final class SearchUserBuilder {
 
     static func build() -> UIViewController {
         let viewController = R.storyboard.searchUser.instantiateInitialViewController()!
-        let presenter = SearchUserPresenterImpl()
         let wireframe = SearchUserWireframeImpl()
 
-        viewController.presenter = presenter
-
-        presenter.view = viewController
-        presenter.useCase = SearchUserUseCaseProvider.provide()
-        presenter.wireframe = wireframe
-
         wireframe.viewController = viewController
+
+        let viewModel = SearchUserViewModel(
+            extra: .init(
+                wireframe: wireframe,
+                useCase: SearchUserUseCaseProvider.provide()
+            )
+        )
+
+        viewController.viewModel = viewModel
 
         return viewController
     }

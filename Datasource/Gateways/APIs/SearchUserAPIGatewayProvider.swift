@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import RxSwift
 
 final public class SearchUserAPIGatewayProvider {
 
@@ -19,27 +20,12 @@ final public class SearchUserAPIGatewayProvider {
 }
 
 public protocol SearchUserAPIGateway {
-    func get(q: String, completion: @escaping (Result) -> Void)
+    func get(_ q: String) -> Observable<SearchUserResponse>
 }
 
 final class SearchUserAPIGatewayImpl: SearchUserAPIGateway {
 
-    func get(q: String, completion: @escaping (Result) -> Void) {
-        let request = GetSearchUserRequest(q: q)
-        AF.request(request) { response in
-            switch response.result {
-            case .success:
-                guard let data = response.data else { return }
-                do {
-                    let res = try JSONDecoder().decode(Response.self, from: data)
-                    completion(.success(res))
-
-                } catch let error {
-                    completion(.failure(error))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+    func get(_ q: String) -> Observable<SearchUserResponse> {
+        AF.request(GetSearchUserRequest(q: q))
     }
 }
