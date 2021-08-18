@@ -14,7 +14,7 @@ protocol SearchUserModelInput {
 
 final class SearchUserModel: SearchUserModelInput {
     func searchUser(q: String, completion: @escaping (Result) -> Void) {
-        Github().searchUser(q: q, completion: { result in
+        SearchUserRepositoryProvider.provide().get(q: q, completion: { result in
             switch result {
             case .success(let res):
                 completion(.success(res))

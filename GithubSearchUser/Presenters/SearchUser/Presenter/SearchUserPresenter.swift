@@ -18,32 +18,27 @@ protocol SearchUserPresenterInput {
 
 protocol SearchUserPresenterOutput: AlertError, ShowNetworkIndicator {
     func reloadData()
-    func pushDetal(_ user: User)
     func showNoResults(_ show: Bool)
 }
 
-final class SearchUserPresenter: SearchUserPresenterInput {
+final class SearchUserPresenterImpl: SearchUserPresenterInput {
 
     private var users: [User] = []
-    private weak var view: SearchUserPresenterOutput!
-    private var model: SearchUserModelInput
-
-    init(view: SearchUserPresenterOutput, model: SearchUserModelInput) {
-        self.view = view
-        self.model = model
-    }
+    weak var view: SearchUserPresenterOutput!
+    var useCase: SearchUserUseCase!
+    var wireframe: SearchUserWireframe!
 
     func countUsers() -> Int {
         return users.count
     }
 
     func didSelectRowAt(_ indexPath: IndexPath) {
-        view.pushDetal(getUser(indexPath))
+        wireframe.pushWebDetail(getUser(indexPath))
     }
 
     func searchButtonClicked(_ text: String?) {
 
-        if text!.isEmpty {
+        guard let text = text else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 self.clearResults()
             })
@@ -51,7 +46,7 @@ final class SearchUserPresenter: SearchUserPresenterInput {
         }
 
         self.view.showNetworkIndicator(true)
-        model.searchUser(q: text!, completion: { result in
+        useCase.get(q: text, completion: { result in
             self.view.showNetworkIndicator(false)
             switch result {
             case .success(let res):

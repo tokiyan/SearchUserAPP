@@ -18,14 +18,10 @@ final class SearchUserViewController: UIViewController {
         }
     }
 
-    private var presenter: SearchUserPresenterInput!
+    var presenter: SearchUserPresenterInput!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let model = SearchUserModel()
-        presenter = SearchUserPresenter(view: self, model: model)
-
         setupSearchBar()
     }
 
@@ -68,12 +64,6 @@ extension SearchUserViewController: SearchUserPresenterOutput {
         self.tableView.reloadData()
         // セルをフェードイン
         animateCell(fadeIn: true)
-    }
-
-    func pushDetal(_ user: User) {
-        let webdetailViewController = R.storyboard.webDetail.instantiateInitialViewController()!
-        webdetailViewController.setData(user)
-        self.navigationController?.pushViewController(webdetailViewController, animated: true)
     }
 
     func showNoResults(_ show: Bool) {

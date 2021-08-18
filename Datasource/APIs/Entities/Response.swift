@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Response: Codable {
+public struct Response: Codable {
     let totalCount: Int
     let incompleteResults: Bool
     let items: [User]
