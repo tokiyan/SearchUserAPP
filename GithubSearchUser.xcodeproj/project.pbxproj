@@ -385,19 +385,19 @@
 				15203141267A18360060BC24 /* Wireframe */,
 				1520313E267A17F80060BC24 /* Builder */,
 				158AA8A726CCB42D00D693DD /* ViewModel */,
-				7FE95EE8244AF202000D150E /* View */,
+				7FE95EE8244AF202000D150E /* ViewController */,
 			);
 			path = SearchUser;
 			sourceTree = "<group>";
 		};
-		7FE95EE8244AF202000D150E /* View */ = {
+		7FE95EE8244AF202000D150E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				15203144267A1ADB0060BC24 /* Parts */,
 				7FE95EE4244AF1E7000D150E /* SearchUser.storyboard */,
 				7FE95EE6244AF1FB000D150E /* SearchUserViewController.swift */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		7FF1A12E244C7874006586C8 /* WebDetail */ = {
