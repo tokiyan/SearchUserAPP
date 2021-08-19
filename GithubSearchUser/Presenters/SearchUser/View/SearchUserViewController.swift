@@ -26,9 +26,9 @@ final class SearchUserViewController: UIViewController, ShowNetworkIndicator {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSearchBar()
         bindInput()
         bindOutput()
-        setupSearchBar()
 
     }
 
@@ -51,7 +51,6 @@ extension SearchUserViewController {
         self.definesPresentationContext = true
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "userName"
-        searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
@@ -89,6 +88,31 @@ extension SearchUserViewController {
         tableView.rx.itemSelected
             .map { $0.row }
             .bind(to: viewModel.input.didTapRow)
+            .disposed(by: disposeBag)
+
+        navigationItem.searchController?.searchBar.rx.cancelButtonClicked
+            .flatMap { [weak self] _ -> Observable<Void> in
+                self?.isSearching = false
+                self?.navigationItem.largeTitleDisplayMode = .always
+                self?.tableView.setContentOffset(.zero, animated: false)
+                self?.animateCell(fadeIn: false) {
+                    self?.navigationItem.largeTitleDisplayMode = .automatic
+                }
+                return .just(())
+            }
+            .bind(to: viewModel.input.clearResult)
+            .disposed(by: disposeBag)
+
+        navigationItem.searchController?.searchBar.rx.searchButtonClicked
+            .flatMap { [weak self] _ -> Observable<Void> in
+                self?.isSearching = true
+                self?.navigationItem.searchController?.searchBar.resignFirstResponder()
+                self?.animateCell(fadeIn: false)
+                return .just(())
+            }
+            .map { [weak self] in self?.navigationItem.searchController?.searchBar.text }
+            .filterNil()
+            .bind(to: viewModel.input.didTapSearchButton)
             .disposed(by: disposeBag)
     }
 }
@@ -132,30 +156,6 @@ extension SearchUserViewController: UITableViewDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             tableView.deselectRow(at: indexPath, animated: true)
         })
-    }
-}
-
-// MARK: - SearchBar
-
-extension SearchUserViewController: UISearchBarDelegate {
-    // キャンセルボタンでリセット
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.isSearching = false
-        self.navigationItem.largeTitleDisplayMode = .always
-        self.tableView.setContentOffset(.zero, animated: false)
-        self.animateCell(fadeIn: false) {
-            self.viewModel.input.clearResult.onNext(())
-            self.navigationItem.largeTitleDisplayMode = .automatic
-        }
-
-    }
-    // エンターキーで検索
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.isSearching = true
-        searchBar.resignFirstResponder()
-        // セルをフェードアウト
-        animateCell(fadeIn: false)
-        self.viewModel.input.didTapSearchButton.onNext(searchBar.text ?? "")
     }
 }
 
