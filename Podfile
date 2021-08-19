@@ -14,4 +14,10 @@ target 'GithubSearchUser' do
 
   pod "ViewAnimator"
 
+  #RX
+  pod 'RxSwift', '6.2.0'
+  pod 'RxCocoa', '6.2.0'
+  pod 'Action'
+  pod 'RxWebKit'
+  pod "Unio"
 end

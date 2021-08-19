@@ -11,6 +11,8 @@ import Alamofire
 
 struct GetSearchUserRequest: Requestable {
 
+    typealias Response = SearchUserResponse
+
     let q: String
 
     var path: String {
