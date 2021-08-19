@@ -17,8 +17,10 @@ final class SearchUserViewController: UIViewController {
             newValue.register(R.nib.userTableViewCell)
         }
     }
+    private var users: [User] = []
 
-    var presenter: SearchUserPresenterInput!
+    var useCase: SearchUserUseCase!
+    var wireframe: SearchUserWireframe!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,9 @@ final class SearchUserViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationItem.largeTitleDisplayMode = .never
     }
+}
+
+extension SearchUserViewController: AlertError, ShowNetworkIndicator {
 
     func setupSearchBar() {
         let searchController = UISearchController(searchResultsController: nil)
@@ -57,9 +62,37 @@ final class SearchUserViewController: UIViewController {
                        completion: completion
         )
     }
-}
 
-extension SearchUserViewController: SearchUserPresenterOutput {
+    func searchButtonClicked(_ text: String?) {
+
+        guard let text = text else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self.clearResults()
+            })
+            return
+        }
+
+        self.showNetworkIndicator(true)
+        useCase.get(q: text, completion: { result in
+            self.showNetworkIndicator(false)
+            switch result {
+            case .success(let res):
+                self.users = res.items
+                self.reloadData()
+                self.showNoResults(res.items.isEmpty)
+            case .failure(let error):
+                self.alertError(error)
+                // エラー後にエラー前の検索結果のセルのフェードアウトが起こる現象を回避
+                self.clearResults()
+            }
+        })
+    }
+
+    func clearResults() {
+        self.users = []
+        self.reloadData()
+    }
+
     func reloadData() {
         self.tableView.reloadData()
         // セルをフェードイン
@@ -76,13 +109,12 @@ extension SearchUserViewController: SearchUserPresenterOutput {
 
 extension SearchUserViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.countUsers()
+        return self.users.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.userCell.identifier) as! UserTableViewCell
-        let user = presenter.getUser(indexPath)
-        cell.setData(user)
+        cell.setData(self.users[indexPath.row])
         return cell
     }
 
@@ -90,7 +122,7 @@ extension SearchUserViewController: UITableViewDataSource {
 
 extension SearchUserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.didSelectRowAt(indexPath)
+        wireframe.pushWebDetail(self.users[indexPath.row])
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             tableView.deselectRow(at: indexPath, animated: true)
@@ -106,7 +138,7 @@ extension SearchUserViewController: UISearchBarDelegate {
         self.navigationItem.largeTitleDisplayMode = .always
         self.tableView.setContentOffset(.zero, animated: false)
         self.animateCell(fadeIn: false) {
-            self.presenter.clearResults()
+            self.clearResults()
             self.navigationItem.largeTitleDisplayMode = .automatic
         }
 
@@ -116,7 +148,7 @@ extension SearchUserViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         // セルをフェードアウト
         animateCell(fadeIn: false)
-        self.presenter.searchButtonClicked(searchBar.text)
+        self.searchButtonClicked(searchBar.text)
     }
 }
 

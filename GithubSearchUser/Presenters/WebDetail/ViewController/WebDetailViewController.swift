@@ -13,17 +13,17 @@ final class WebDetailViewController: UIViewController {
 
     @IBOutlet private weak var webView: WKWebView!
 
-    var presenter: WebDetailPresenterInput!
+    var user: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.requestUser()
+        setWebView()
     }
 }
 
-extension WebDetailViewController: WebDetailPresenterOutput {
+extension WebDetailViewController: AlertError, ShowNetworkIndicator {
 
-    func setWebView(_ user: User) {
+    func setWebView() {
         self.navigationItem.title = user.login
         let url = URL(string: user.htmlURL)
         let request = URLRequest(url: url!)

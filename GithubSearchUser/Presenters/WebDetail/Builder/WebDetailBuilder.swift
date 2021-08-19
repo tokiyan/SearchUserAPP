@@ -14,13 +14,9 @@ final class WebDetailBuilder {
 
     static func build(_ user: User) -> UIViewController {
         let viewController = R.storyboard.webDetail.instantiateInitialViewController()!
-        let presenter = WebDetailPresenterImpl()
         let wireframe = WebDetailWireframeImpl()
 
-        viewController.presenter = presenter
-
-        presenter.user = user
-        presenter.view = viewController
+        viewController.user = user
 
         wireframe.viewController = viewController
 
